@@ -1,0 +1,8 @@
+dependencies:
+    override:
+        - sudo pip install awscli
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync / s3://gdpr-test1 --delete
