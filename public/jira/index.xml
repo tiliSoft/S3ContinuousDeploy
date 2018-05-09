@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jira data on GDPR Patterns</title>
+    <link>/jira/</link>
+    <description>Recent content in Jira data on GDPR Patterns</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	<atom:link href="/jira/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>View Jira Data</title>
+      <link>/jira/view-jira-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-jira-data/</guid>
+      <description>#textarea_repl_243 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 20  Run Cypher      Cypher Error!    function run_Query_repl_243() { cypher = $(&#39;#textarea_repl_243&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_243() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>DB - Schema</title>
+      <link>/jira/db-schema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/db-schema/</guid>
+      <description>Here is the current DB Schema</description>
+    </item>
+    
+    <item>
+      <title>Data Journey</title>
+      <link>/jira/data-journeys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/data-journeys/</guid>
+      <description>Here are all the Journeys
+ #textarea_repl_880 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a:Data_Journey {key: &amp;#34;GDPR-206&amp;#34;})-[to*0..3]-(b) return * Limit 150  Run Cypher      Cypher Error!    function run_Query_repl_880() { cypher = $(&#39;#textarea_repl_880&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_880() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>List of Risks</title>
+      <link>/jira/list-of-risks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/list-of-risks/</guid>
+      <description>Here are all the risk
+ #textarea_repl_93 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 50  Run Cypher      Cypher Error!    function run_Query_repl_93() { cypher = $(&#39;#textarea_repl_93&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_93() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Risks from Data Journey</title>
+      <link>/jira/views/risks-from-data-journey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/views/risks-from-data-journey/</guid>
+      <description>Here are all the Risks Journeys</description>
+    </item>
+    
+    <item>
+      <title>View Jira Data (just some fields)</title>
+      <link>/jira/view-jira-data-some-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-jira-data-some-fields/</guid>
+      <description>#textarea_repl_263 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 20  Run Cypher      Cypher Error!    function run_Query_repl_263() { cypher = $(&#39;#textarea_repl_263&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_263() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>View Nodes</title>
+      <link>/jira/view-nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-nodes/</guid>
+      <description>Query  #textarea_repl_75 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 50  Run Cypher      Cypher Error!    function run_Query_repl_75() { cypher = $(&#39;#textarea_repl_75&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_75() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>View risks parents</title>
+      <link>/jira/view-risks-parents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-risks-parents/</guid>
+      <description>write your own cypher queries
+Query  #textarea_repl_449 { border-radius: .8rem; height: 100px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a:RISK {key:&amp;#34;RISK-223&amp;#34;} )-[to:is_parent_of*0..2]-(b) return * Limit 50  Run Cypher      Cypher Error!    function run_Query_repl_449() { cypher = $(&#39;#textarea_repl_449&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_449() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="Example - Animate"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>Example - Animate</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+    <div class="app-body">
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          <head>
+    <style type="text/css">
+
+        .viz {
+            width: 100%;
+            height: 550px;
+            border: 1px solid lightgray;
+            font: 12pt arial;
+            background: white;
+        }
+    </style>
+</head>
+          
+
+
+
+
+
+<script src="/js/neo4j/neovis.js"></script>
+
+<script>
+
+    var params_Data = {
+        cypher        : "MATCH (a)-[to]-(b) return * Limit 40",
+        labels        : {
+}
+,
+        relationships : {
+}
+,
+        options       : {
+                            gravitationalConstant: -800
+                        },
+        hide_Graph    : "false"
+    }
+
+
+
+
+    let server_url      = "bolt:\/\/localhost:7687",
+        server_user     = "",
+        server_password = "test",
+        container_id    = "viz";
+
+
+
+</script>
+
+<script src="/js/neo4j/neo4j-util.js"></script>
+          
+    
+    
+    
+    
+    
+
+    <h2> Example - Animate</h2>
+    
+
+<p>Here is an example of animating nodes movements.</p>
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/repl/codemirror.css">
+
+<script src="/js/repl/codemirror.js"></script>
+
+<script src="/js/repl/coffeescript.js"></script>
+
+<script src="/js/repl/browser-compiler-coffeescript.js"></script>
+
+
+<style>
+
+    .card                          {   margin       : 0px   ;                     }
+    #card-response                 {   height       : 100%  ;                     }
+    #repl                          {   margin       : 5px   ;                     }
+    #repl           .col-10        {   padding-right: 0px   ;                     }
+    #repl           .col-2         {   padding-left : 5px   ;                     }
+    #card-code     .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-code     .card-actions a {   padding      : 0px   ;                     }
+    #card-code     .card-actions i {   color        : black ;                     }
+    #card-code     .card-body      {   padding      : 0px   ;                     }
+    #card-response .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-response .card-body      {   padding      : 0px   ;                     }
+
+    #card-response textarea {
+        position  :absolute;
+        bottom    : 0px;
+        top       : 20px;
+        left      : 0px;
+        right     : 2px;
+        padding   : 5px;
+        font-size : 12px;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div class="_card border-primary " id="repl">
+
+    <div class="_card-body">
+        <div class="row">
+            <div class="col-10">
+                
+
+
+
+<div class="card border-primary " id="card-code">
+    <div class="card-header">
+        Code (JavaScript)
+        <div class="card-actions bg-success">
+            <a href="#" class="btn-setting" onclick="exec_Code_repl_703()"><i class="icon-control-play"></i></a>
+        </div>
+    </div>
+    <div class="card-body">
+        <textarea id="code_repl_703">
+async function animate()
+{
+    speed = 1000
+    for (i = 0; i &lt; 5; i&#43;&#43;)
+    {
+        await neo.go_to_node(i, speed)
+        //neo.viz._network.fit()  // will reset view
+    }
+};
+
+animate()
+ </textarea>
+    </div>
+</div>
+            </div>
+            <div class="col-2">
+                <div class="card border-primary " id="card-response">
+                    <div class="card-header">
+                        Result
+                    </div>
+                    <div class="card-body">
+                        <textarea id="result_repl_232" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    var options = {
+        lineNumbers: true,
+        mode: "coffeescript",
+        extraKeys: {
+            'Cmd-Enter': (cm) => {
+                exec_Code_repl_703()
+            },
+        },
+    }
+    var target = document.getElementById("code_repl_703")
+    var myCodeMirror_repl_703 = CodeMirror.fromTextArea(target, options);
+    myCodeMirror_repl_703.setSize("100%", 155)
+
+    function exec_Code_repl_703(){
+        value = myCodeMirror_repl_703.getValue()
+        if ('JavaScript' ==='JavaScript')
+            try {
+                result = new Function(value)()
+                if(typeof(result) == "object")
+                    result = JSON.stringify(result)
+            } catch( err)
+            {
+                result = err
+            }
+        else
+            result = CoffeeScript.run(value)        
+
+        $("#result_repl_232").val(result)
+    }
+
+    window.addEventListener("load",function(event) {
+        if ((typeof neo)=== "undefined")
+        {
+            exec_Code_repl_703()
+        }
+        else
+        {
+            window.afterLoad = function() {
+                exec_Code_repl_703()
+            }
+        }
+    })
+
+</script>
+
+<h3 id="graph">Graph</h3>
+
+    
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+
+    <div class="viz" id="viz"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#viz").height();
+    $("#viz").width( );
+    $(function() {
+        options =
+            {
+                cypher : "MATCH (a)-[to]-(b) return * Limit 40" ,
+                id     : "viz" ,
+                layout : ""
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+  </body>
+</html>

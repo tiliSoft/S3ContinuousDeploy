@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+    <title>Neovis.js Simple Example</title>
+    
+
+    
+    <style type="text/css">
+    html, body {
+        font: 16pt arial;
+    }
+
+    #viz {
+        width: 100%;
+        height: 550px;
+        border: 1px solid lightgray;
+        font: 22pt arial;
+    }
+</style>
+</head>
+<body onload="draw()">
+<h1>Neo4J visualisation of RISK</h1>
+<p>This is a Neovis graph on RISKs  (with options from defined in an
+hugo markdown file )</p>
+
+
+<h4>Cypher</h4>
+<textarea id='cypher'style="width:90%;height:50px">MATCH (n:RISK {key:&#39;RISK-855&#39;}) MATCH path = (n:RISK)-[:is_parent_of*..3]-&gt;(v:RISK) return path limit 100 </textarea>
+
+<button onclick="run_query()">run</button>
+<div id="result">...</div>
+
+<h4>Graph</h4>
+<script >
+    var params_Data = {
+        cypher        : "MATCH (n:RISK {key:\x27RISK-855\x27}) MATCH path = (n:RISK)-[:is_parent_of*..3]-\x3e(v:RISK) return path limit 100",
+        labels        : {
+            "_risk_service" :{
+            "caption" :"key",
+}
+,
+            "issue" :{
+            "caption" :"key",
+            "color" :"lightgray",
+}
+,
+            "risk" :{
+            "caption" :"key",
+            "image" :"/img/osa/osa_warning.png",
+}
+,
+            "risk_taxonomy" :{
+            "caption" :"key",
+            "image" :"/img/osa/osa_ics_drive.png",
+}
+,
+}
+,
+        relationships : {
+            "is_child_of" :{
+            "arrow" :true,
+            "label" :"child",
+}
+,
+            "is_parent_of" :{
+            "arrow" :true,
+            "label" :"parent",
+}
+,
+            "relates_to" :{
+            "label" :"relates",
+}
+,
+}
+,
+        options       : {
+            gravitationalConstant: -1500
+        }
+    }
+
+
+</script>
+
+
+
+<div id="viz"></div>
+<script src="/api/js/neovis.js"></script>
+<script type="text/javascript">
+    
+    var viz;
+    var root_Node_Id = 'RISK-855'
+    var cypher       = params_Data.cypher
+
+    async function draw() {
+        var config = {
+            container_id: "viz",
+            server_url: "bolt:\/\/localhost:7687",
+            server_user: "neo4j",
+            server_password: "test",
+            labels: params_Data.labels,
+            relationships: params_Data.relationships,
+            initial_cypher: cypher
+        };
+
+        viz = new NeoVis.default(config);
+        viz.setup()
+        await viz.render_async()
+
+        options = {
+            nodes: {
+                shape: 'box'
+            },
+            edges: {
+                color: {color: "black"},
+                
+                physics: true
+            },
+            physics: {
+                barnesHut: {
+                    gravitationalConstant: params_Data.options.gravitationalConstant,
+                    
+                }
+            }
+        }
+
+        viz._network.setOptions(options)
+
+
+
+
+
+
+
+
+
+        viz._network.on("doubleClick", function (params) {
+
+            id = params.nodes[0]
+            nodes = viz._network.body.data.nodes;
+            node = nodes.get(id)
+            console.log(node)
+            url = "https://jira.photobox.com/browse/" + node.label
+            url = "/api/jira/issue/" + node.label + '?pretty'
+            console.log("going to open" + node.label)
+            window.open(url, '_blank');
+
+        })
+        nodes = viz._network.body.data.nodes;
+        edges = viz._network.body.data.edges;
+
+        document.getElementById("result").innerHTML = 'received ' + nodes.length + ' nodes and ' + edges.length + ' edges'
+        set_Root_Node(root_Node_Id)
+    }
+
+    function set_Root_Node(id)
+    {
+
+        match = nodes.get({
+            filter: function (item) {
+                return (item.label == id);
+            }
+        })
+        if (match.length === 1)
+        {
+            
+            values = { _shape: 'circle', mass:10, font: { size: 20} , _color:'red', group:undefined }
+            values.id = match[0].id
+            nodes.update(values)
+        }
+        else
+        {
+            console.log('Error: Could not find Root Node: ' + id )
+        }
+    }
+
+    function run_query() {
+        cypher = document.getElementById("cypher").value
+        draw()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

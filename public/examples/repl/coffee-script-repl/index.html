@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="Coffee Script REPL"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>Coffee Script REPL</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+    <div class="app-body">
+
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          
+
+    <h1>Coffee Script REPL</h1>
+    <div class="user-edit"><p>here is a simple example</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/repl/codemirror.css">
+
+<script src="/js/repl/codemirror.js"></script>
+
+<script src="/js/repl/coffeescript.js"></script>
+
+<script src="/js/repl/browser-compiler-coffeescript.js"></script>
+
+
+<style>
+
+    .card                          {   margin       : 0px   ;                     }
+    #card-response                 {   height       : 100%  ;                     }
+    #repl                          {   margin       : 5px   ;                     }
+    #repl           .col-10        {   padding-right: 0px   ;                     }
+    #repl           .col-2         {   padding-left : 5px   ;                     }
+    #card-code     .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-code     .card-actions a {   padding      : 0px   ;                     }
+    #card-code     .card-actions i {   color        : black ;                     }
+    #card-code     .card-body      {   padding      : 0px   ;                     }
+    #card-response .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-response .card-body      {   padding      : 0px   ;                     }
+
+    #card-response textarea {
+        position  :absolute;
+        bottom    : 0px;
+        top       : 20px;
+        left      : 0px;
+        right     : 2px;
+        padding   : 5px;
+        font-size : 12px;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div class="_card border-primary " id="repl">
+
+    <div class="_card-body">
+        <div class="row">
+            <div class="col-10">
+                
+
+
+
+<div class="card border-primary " id="card-code">
+    <div class="card-header">
+        Code (CoffeeScript)
+        <div class="card-actions bg-success">
+            <a href="#" class="btn-setting" onclick="exec_Code_repl_795()"><i class="icon-control-play"></i></a>
+        </div>
+    </div>
+    <div class="card-body">
+        <textarea id="code_repl_795">
+return 42;
+ </textarea>
+    </div>
+</div>
+            </div>
+            <div class="col-2">
+                <div class="card border-primary " id="card-response">
+                    <div class="card-header">
+                        Result
+                    </div>
+                    <div class="card-body">
+                        <textarea id="result_repl_330" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    var options = {
+        lineNumbers: true,
+        mode: "coffeescript",
+        extraKeys: {
+            'Cmd-Enter': (cm) => {
+                exec_Code_repl_795()
+            },
+        },
+    }
+    var target = document.getElementById("code_repl_795")
+    var myCodeMirror_repl_795 = CodeMirror.fromTextArea(target, options);
+    myCodeMirror_repl_795.setSize("100%", 150)
+
+    function exec_Code_repl_795(){
+        value = myCodeMirror_repl_795.getValue()
+        if ('CoffeeScript' ==='JavaScript')
+            try {
+                result = new Function(value)()
+                if(typeof(result) == "object")
+                    result = JSON.stringify(result)
+            } catch( err)
+            {
+                result = err
+            }
+        else
+            result = CoffeeScript.run(value)        
+
+        $("#result_repl_330").val(result)
+    }
+
+    window.addEventListener("load",function(event) {
+        if ((typeof neo)=== "undefined")
+        {
+            exec_Code_repl_795()
+        }
+        else
+        {
+            window.afterLoad = function() {
+                exec_Code_repl_795()
+            }
+        }
+    })
+
+</script>
+
+<p>Here are some variable assigments</p>
+
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/repl/codemirror.css">
+
+<script src="/js/repl/codemirror.js"></script>
+
+<script src="/js/repl/coffeescript.js"></script>
+
+<script src="/js/repl/browser-compiler-coffeescript.js"></script>
+
+
+<style>
+
+    .card                          {   margin       : 0px   ;                     }
+    #card-response                 {   height       : 100%  ;                     }
+    #repl                          {   margin       : 5px   ;                     }
+    #repl           .col-10        {   padding-right: 0px   ;                     }
+    #repl           .col-2         {   padding-left : 5px   ;                     }
+    #card-code     .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-code     .card-actions a {   padding      : 0px   ;                     }
+    #card-code     .card-actions i {   color        : black ;                     }
+    #card-code     .card-body      {   padding      : 0px   ;                     }
+    #card-response .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-response .card-body      {   padding      : 0px   ;                     }
+
+    #card-response textarea {
+        position  :absolute;
+        bottom    : 0px;
+        top       : 20px;
+        left      : 0px;
+        right     : 2px;
+        padding   : 5px;
+        font-size : 12px;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div class="_card border-primary " id="repl">
+
+    <div class="_card-body">
+        <div class="row">
+            <div class="col-10">
+                
+
+
+
+<div class="card border-primary " id="card-code">
+    <div class="card-header">
+        Code (CoffeeScript)
+        <div class="card-actions bg-success">
+            <a href="#" class="btn-setting" onclick="exec_Code_repl_396()"><i class="icon-control-play"></i></a>
+        </div>
+    </div>
+    <div class="card-body">
+        <textarea id="code_repl_396">
+a_var  = 123
+result = a_var &#43; 2
+return result
+ </textarea>
+    </div>
+</div>
+            </div>
+            <div class="col-2">
+                <div class="card border-primary " id="card-response">
+                    <div class="card-header">
+                        Result
+                    </div>
+                    <div class="card-body">
+                        <textarea id="result_repl_828" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    var options = {
+        lineNumbers: true,
+        mode: "coffeescript",
+        extraKeys: {
+            'Cmd-Enter': (cm) => {
+                exec_Code_repl_396()
+            },
+        },
+    }
+    var target = document.getElementById("code_repl_396")
+    var myCodeMirror_repl_396 = CodeMirror.fromTextArea(target, options);
+    myCodeMirror_repl_396.setSize("100%", 150)
+
+    function exec_Code_repl_396(){
+        value = myCodeMirror_repl_396.getValue()
+        if ('CoffeeScript' ==='JavaScript')
+            try {
+                result = new Function(value)()
+                if(typeof(result) == "object")
+                    result = JSON.stringify(result)
+            } catch( err)
+            {
+                result = err
+            }
+        else
+            result = CoffeeScript.run(value)        
+
+        $("#result_repl_828").val(result)
+    }
+
+    window.addEventListener("load",function(event) {
+        if ((typeof neo)=== "undefined")
+        {
+            exec_Code_repl_396()
+        }
+        else
+        {
+            window.afterLoad = function() {
+                exec_Code_repl_396()
+            }
+        }
+    })
+
+</script></p>
+
+<hr />
+
+<p><a href="../">to repl examples</a></p>
+</div>
+
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+  </body>
+</html>

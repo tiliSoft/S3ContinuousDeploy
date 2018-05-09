@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="Table - Cypher Query"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>Table - Cypher Query</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+    <div class="app-body">
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          <head>
+    <style type="text/css">
+
+        .viz {
+            width: 100%;
+            height: 550px;
+            border: 1px solid lightgray;
+            font: 12pt arial;
+            background: white;
+        }
+    </style>
+</head>
+          
+
+
+
+
+
+<script src="/js/neo4j/neovis.js"></script>
+
+<script>
+
+    var params_Data = {
+        cypher        : "MATCH (a:RISK)-[to]-(b) RETURN a.key,type(to),b.key LIMIT 250",
+        labels        : {
+}
+,
+        relationships : {
+}
+,
+        options       : {
+                            gravitationalConstant: -800
+                        },
+        hide_Graph    : "true"
+    }
+
+
+
+
+    let server_url      = "bolt:\/\/localhost:7687",
+        server_user     = "",
+        server_password = "test",
+        container_id    = "viz";
+
+
+
+</script>
+
+<script src="/js/neo4j/neo4j-util.js"></script>
+          
+    
+    
+    
+    
+    
+
+    <h2> Table - Cypher Query</h2>
+    
+
+<h3 id="query">Query</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    #textarea_repl_480 {
+        border-radius: .8rem;
+        height: 35px;
+        margin-left: 15px;
+    }
+    #cypher-query button {
+        border-radius: .8rem;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .alert {
+        border-radius: .8rem;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+</style>
+
+<div class="form-group row" id="cypher-query">
+    <div class="col-md-12">
+        <div class="input-group">
+            <textarea id="textarea_repl_480"
+                      class="form-control">MATCH (a:RISK)-[to]-(b) RETURN a.key,type(to),b.key LIMIT 250</textarea>
+
+            <span class="input-group-append">
+                <button type="button"
+                        class="btn btn-primary"
+                        onClick="run_Query_repl_480()">
+                            <i class="fa fa-search"></i>
+                    Run Cypher
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+<div id="cypher-error-alert" class="alert alert-danger" role="alert" style="display:none">
+    <strong>Cypher Error!</strong>
+    <br><span id="cypher-error-text"></span>
+</div>
+
+<script>
+    function run_Query_repl_480() {
+        cypher = $('#textarea_repl_480').val()
+        neo.run_query(cypher)
+    }
+    function afterLoad() {
+        if ('yes'==='yes')             
+            run_Query_repl_480()
+    }
+    function get_Query_from_Url()
+    {
+        $.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                .exec(window.location.search);
+
+            return (results !== null) ? decodeURIComponent(results[1].replace(/\+/g, " ")) || 0 : false;
+        }
+        cypher = $.urlParam('cypher')
+        if (cypher )
+        {
+            $("#textarea_repl_480").val(cypher)
+        }
+    }
+    
+    jQuery(document).keydown(function(event) {
+            if((event.ctrlKey || event.metaKey) && (event.which == 13 ||  event.which == 83)) {
+                run_Query_repl_480()
+                event.preventDefault();
+                return false;
+            }
+        }
+    );
+
+    get_Query_from_Url()
+</script>
+
+<p>
+<style>
+    #neo4j-table {
+        background: white;
+    }
+</style>
+
+<div id="neo4j-table"></div>
+
+<script>
+
+
+    function get_Table_Data() {
+        let records = neo.viz._records
+        let results = {}
+        for (i = 0; i < records.length; i++) {
+            for (j = 0; j < records[i].length; j++) {
+                key = records[i].keys[j]
+                value = records[i]._fields[j].toString()
+                if (results[key] === undefined) {
+                    results[key] = []
+                }
+                results[key].push(value)
+            }
+        }
+        return results
+    }
+
+    function create_Table() {
+        records = neo.viz._records
+
+        if (! records || ! records[0])
+            return
+
+        table_Data = get_Table_Data()
+        myTable = $('<table class="table table-responsive-sm table-sm"></table>')
+        headers = $('<tr></tr>')
+        headers.append('<th>#</th>')
+        for (let key of records[0].keys) {
+            headers.append('<th>' + key + '</th>')
+        }
+        myTable.append(headers)
+
+
+        for (i = 0; i < records.length; i++) {
+            row = $('<tr></tr>')
+            row.append('<td>' + (i +1) +'</td>')
+            for (var key in table_Data) {
+                row.append('<td>' + table_Data[key][i] + '</td>')
+            }
+            myTable.append(row)
+        }
+
+        $('#neo4j-table').html(myTable)
+    }
+
+</script>
+</p>
+
+    
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+
+    <div class="viz" id="viz"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#viz").height(350);
+    $("#viz").width( );
+    $(function() {
+        options =
+            {
+                cypher : "MATCH (a:RISK)-[to]-(b) RETURN a.key,type(to),b.key LIMIT 250" ,
+                id     : "viz" ,
+                layout : ""
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+  </body>
+</html>

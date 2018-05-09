@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/cypher-query/</loc>
+  </url>
+  
+  <url>
+    <loc>/cypher-table/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/tests/cypher-query_soti/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/view-jira-data/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/4-graphs/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/examples/repl/coffee-script-repl/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/repl/repl-and-cypher/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/tests/control-neo4j/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/db-schema/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/data-journeys/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/tests/debug-query/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/tests/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/animate/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/canvas-draw/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/hierarchical/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/list-of-risks/</loc>
+  </url>
+  
+  <url>
+    <loc>/neo4j/</loc>
+  </url>
+  
+  <url>
+    <loc>/gdpr/</loc>
+  </url>
+  
+  <url>
+    <loc>/risks/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/repl/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/views/risks-from-data-journey/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/run-cypher/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/run-multiple-cypher/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/table-from-neo-data/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/neovis/table-neo4j-stats/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/jira/view-jira-data-some-fields/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/view-nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>/jira/view-risks-parents/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/visjs/basic-usage/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/repl/repl-visjs-coffeescript/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/visjs/disassemblerexample/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/visjs/node-legend/</loc>
+  </url>
+  
+  <url>
+    <loc>/examples/visjs/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/tests/</loc>
+  </url>
+  
+</urlset>

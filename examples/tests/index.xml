@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev Tests on GDPR Patterns</title>
+    <link>/examples/tests/</link>
+    <description>Recent content in Dev Tests on GDPR Patterns</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	<atom:link href="/examples/tests/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test Soti</title>
+      <link>/examples/tests/cypher-query_soti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/tests/cypher-query_soti/</guid>
+      <description>Testing Schema
+Query  #textarea_repl_897 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 10  Run Cypher      Cypher Error!    function run_Query_repl_897() { cypher = $(&#39;#textarea_repl_897&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_897() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Control Neo4j</title>
+      <link>/examples/tests/control-neo4j/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/tests/control-neo4j/</guid>
+      <description> Multiple queries for the api (make sure you are on http;//localhost:3000)
+Neo4J queries  match (n) return n match (n:Movie) return n create node create nodes for issue (GDPR-223) create nodes for issue (RISK-1092) create nodes using regex (GDPR-22)  Data setup  delete all nodes create all GDPR create all RISK  Jira data  all ids id:files RISK-1 Fields Schema  </description>
+    </item>
+    
+    <item>
+      <title>Debug Cypher query</title>
+      <link>/examples/tests/debug-query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/tests/debug-query/</guid>
+      <description>This view can be used to see what data is received from Neo4J and how they are transformed into visjs objects
+Query  #textarea_repl_530 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to:relates_to]-(b) return * Limit 2  Run Cypher      Cypher Error!    function run_Query_repl_530() { cypher = $(&#39;#textarea_repl_530&#39;).</description>
+    </item>
+    
+  </channel>
+</rss>

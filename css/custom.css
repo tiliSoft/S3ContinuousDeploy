@@ -1,0 +1,13 @@
+.grid{
+	display: grid;
+}
+
+@media (min-width:760px){
+	.grid{
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap:1.25rem;
+	}
+	.grid__item .card{
+		margin-bottom:0;
+	}
+}

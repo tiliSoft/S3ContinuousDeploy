@@ -3,14 +3,13 @@
 <html lang="en">
 
   <head>
-	<meta name="generator" content="Hugo 0.40.2" />
     <meta charset   ="utf-8"                                                                               >
     <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
     <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
-    <meta name      ="description"                content="home page"                                   >
+    <meta name      ="description"                content="Control Neo4j"                                   >
     <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
 
-    <title>home page</title>
+    <title>Control Neo4j</title>
 
     <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
     <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
@@ -93,12 +92,61 @@
 
           
 
-  <h1>home page</h1>
-  <p>This is the home page.</p>
+    
+    <style>
+        #action-target {
+            width     : 100%;
+            height    : 500px;
+            background: white;
+        }
+    </style>
 
-<p>The repo with this apps code is <a href="https://github.com/OWASP/gdpr-patterns/">https://github.com/OWASP/gdpr-patterns/</a></p>
+    <base target="action-target">
 
+    <h1>Control Neo4j</h1>
 
+    <div class="row" id="neo4j-actions">
+        <div class="col-6">
+            
+
+<p>Multiple queries for the api (make sure you are on http;//localhost:3000)</p>
+
+<h4 id="neo4j-queries">Neo4J queries</h4>
+
+<ul>
+<li><a href="/api/neo4j/cypher?pretty&amp;query=match+(n)+return+n">match (n) return n</a></li>
+<li><a href="/api/neo4j/cypher?pretty&amp;query=match (n:Movie) return n">match (n:Movie) return n</a></li>
+<li><a href="/api/neo4j/create/ABCAAA?a=123">create node</a></li>
+<li><a href="/api/neo4j/nodes/create/GDPR-223?pretty">create nodes for issue</a> (GDPR-223)</li>
+<li><a href="/api/neo4j/nodes/create/RISK-1092?pretty">create nodes for issue</a> (RISK-1092)</li>
+<li><a href="/api/neo4j/nodes/create-regex/GDPR-22?pretty">create nodes using regex</a> (GDPR-22)</li>
+</ul>
+
+<h4 id="data-setup">Data setup</h4>
+
+<ul>
+<li><a href="/api/neo4j/delete/all?pretty">delete all nodes</a></li>
+<li><a href="/api/neo4j/nodes/create-regex/GDPR-?pretty">create all GDPR</a></li>
+<li><a href="/api/neo4j/nodes/create-regex/RISK-?pretty">create all RISK</a></li>
+</ul>
+
+<h4 id="jira-data">Jira data</h4>
+
+<ul>
+<li><a href="/api/jira/issues/ids">all ids</a></li>
+<li><a href="/api/jira/issues/files">id:files</a></li>
+<li><a href="/api/jira/issue/RISK-1?pretty">RISK-1</a></li>
+<li><a href="/api/jira/fields/schema">Fields Schema</a></li>
+</ul>
+
+        </div>
+        <div class="col-6">
+            <iframe name="action-target"
+                    id="action-target"></iframe>
+        </div>
+    </div>
+    <hr>
+    <a href="/" target="_self">Go to Home</a> (break IFrame target)
 
 
         </div>

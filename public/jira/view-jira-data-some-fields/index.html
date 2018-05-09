@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="View Jira Data (just some fields)"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>View Jira Data (just some fields)</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+    <div class="app-body">
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          <head>
+    <style type="text/css">
+
+        .viz {
+            width: 100%;
+            height: 550px;
+            border: 1px solid lightgray;
+            font: 12pt arial;
+            background: white;
+        }
+    </style>
+</head>
+          
+
+
+
+
+
+<script src="/js/neo4j/neovis.js"></script>
+
+<script>
+
+    var params_Data = {
+        cypher        : "MATCH (a)-[to]-(b) return * Limit 20",
+        labels        : {
+            "data_journey" :{
+            "caption" :"key",
+}
+,
+            "risk" :{
+            "caption" :"key",
+            "image" :"/img/osa/osa_warning.png",
+}
+,
+            "risk_service" :{
+            "caption" :"key",
+}
+,
+            "security_controls" :{
+            "caption" :"key",
+}
+,
+}
+,
+        relationships : {
+}
+,
+        options       : {
+                            gravitationalConstant: -800
+                        },
+        hide_Graph    : "false"
+    }
+
+
+
+
+    let server_url      = "bolt:\/\/localhost:7687",
+        server_user     = "",
+        server_password = "test",
+        container_id    = "viz";
+
+
+
+</script>
+
+<script src="/js/neo4j/neo4j-util.js"></script>
+          
+    
+    
+    
+    
+    
+
+    <h2> View Jira Data (just some fields)</h2>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    #textarea_repl_263 {
+        border-radius: .8rem;
+        height: 35px;
+        margin-left: 15px;
+    }
+    #cypher-query button {
+        border-radius: .8rem;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .alert {
+        border-radius: .8rem;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+</style>
+
+<div class="form-group row" id="cypher-query">
+    <div class="col-md-12">
+        <div class="input-group">
+            <textarea id="textarea_repl_263"
+                      class="form-control">MATCH (a)-[to]-(b) return * Limit 20</textarea>
+
+            <span class="input-group-append">
+                <button type="button"
+                        class="btn btn-primary"
+                        onClick="run_Query_repl_263()">
+                            <i class="fa fa-search"></i>
+                    Run Cypher
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+<div id="cypher-error-alert" class="alert alert-danger" role="alert" style="display:none">
+    <strong>Cypher Error!</strong>
+    <br><span id="cypher-error-text"></span>
+</div>
+
+<script>
+    function run_Query_repl_263() {
+        cypher = $('#textarea_repl_263').val()
+        neo.run_query(cypher)
+    }
+    function afterLoad() {
+        if ('yes'==='yes')             
+            run_Query_repl_263()
+    }
+    function get_Query_from_Url()
+    {
+        $.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                .exec(window.location.search);
+
+            return (results !== null) ? decodeURIComponent(results[1].replace(/\+/g, " ")) || 0 : false;
+        }
+        cypher = $.urlParam('cypher')
+        if (cypher )
+        {
+            $("#textarea_repl_263").val(cypher)
+        }
+    }
+    
+    jQuery(document).keydown(function(event) {
+            if((event.ctrlKey || event.metaKey) && (event.which == 13 ||  event.which == 83)) {
+                run_Query_repl_263()
+                event.preventDefault();
+                return false;
+            }
+        }
+    );
+
+    get_Query_from_Url()
+</script>
+
+<h3 id="legend">legend:</h3>
+
+<p>
+
+
+
+
+<img src="/img/osa/osa_warning.png"
+     height="20"
+     width=""
+     target="" /> RISK</p>
+
+
+    <div class="row" id="repl-visjs">
+        <div class="col-8" class="display:none">
+            <h4>Graph</h4>
+            
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+
+    <div class="viz" id="viz"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#viz").height();
+    $("#viz").width( );
+    $(function() {
+        options =
+            {
+                cypher : "MATCH (a)-[to]-(b) return * Limit 20" ,
+                id     : "viz" ,
+                layout : "with-jira-view"
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+        </div>
+        <div class="col-4">
+            <h4>Selected Node Jira Data</h4>
+            
+
+<script>
+    var jira_fields = [
+            "Summary",
+            "Risk Rating",
+            "Security Capability",
+]
+
+    console.log (jira_fields)
+</script>
+
+
+<style>
+    #issue-data {
+        background-color: white;
+        height : 100%;
+    }
+</style>
+<script>
+
+    function on_Node_Selected(params) {
+        _params = params
+        
+        if (params.nodes.length === 1) {
+            id = params.nodes[0]
+            nodes = neo.viz._network.body.data.nodes;
+            node  = nodes.get(id)
+            process_Id(node.label)
+        }
+    }
+    function process_Id(id)
+    {
+        url = "/api/jira/issue/" + id
+        $.getJSON(url, function(data) {
+            create_Table(data)
+        })
+    }
+    function create_Table(data){
+
+        table = $('<table class="table table-responsive-sm table-sm">')
+        if (jira_fields.length > 0)
+        {
+            for (var i = 0; i < jira_fields.length; i++)
+            {
+                key = jira_fields[i]
+                value = data[key] ? data[key] : ""
+                row = $('<tr><th>' + key + '</th><td>'+ value +'</d></tr>')
+                table.append(row)
+            }
+        }
+        else
+
+            for(var key in data)
+            {
+                value = data[key]
+                row = $('<tr><th>' + key + '</th><td>'+ value +'</d></tr>')
+                table.append(row)
+            }
+
+        _data = data
+        $('#issue-data').html(table)
+    }
+
+    function get_Query_from_Url()
+    {
+        $.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                .exec(window.location.search);
+
+            return (results !== null) ? decodeURIComponent(results[1].replace(/\+/g, " ")) || 0 : false;
+        }
+        key = $.urlParam('key')
+        if (key )
+        {
+            process_Id(key)
+        }
+    }
+
+    get_Query_from_Url()
+</script>
+
+<div id="issue-data"></div>
+
+
+        </div>
+    </div>
+
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+  </body>
+</html>

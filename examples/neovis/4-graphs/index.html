@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="4-graphs"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>4-graphs</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+    <div class="app-body">
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          <head>
+    <style type="text/css">
+
+        .viz {
+            width: 100%;
+            height: 550px;
+            border: 1px solid lightgray;
+            font: 12pt arial;
+            background: white;
+        }
+    </style>
+</head>
+          
+
+
+
+
+
+<script src="/js/neo4j/neovis.js"></script>
+
+<script>
+
+    var params_Data = {
+        cypher        : "",
+        labels        : {
+            "issue" :{
+            "caption" :"key",
+}
+,
+            "risk" :{
+            "caption" :"key",
+            "image" :"/img/osa/osa_warning.png",
+}
+,
+            "risk_service" :{
+            "caption" :"key",
+            "shape" :"box",
+}
+,
+}
+,
+        relationships : {
+}
+,
+        options       : {
+                            gravitationalConstant: -500
+                        },
+        hide_Graph    : "false"
+    }
+
+
+
+
+    let server_url      = "bolt:\/\/localhost:7687",
+        server_user     = "",
+        server_password = "test",
+        container_id    = "viz";
+
+
+
+</script>
+
+<script src="/js/neo4j/neo4j-util.js"></script>
+          
+    <h2> 4-graphs</h2>
+
+    <p>Here are multiple queries of cypher <code>MATCH (a)-[to]-(b)</code> with different values of <code>Limit</code></p>
+
+<div class='row'>
+
+    
+
+
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+    <h3>showing 5</h3>
+    
+
+    <div class="viz" id="limit_5"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#limit_5").height(200);
+    $("#limit_5").width( );
+    $(function() {
+        options =
+            {
+                cypher : "\n        MATCH (a)-[to]-(b)\n        return * Limit 5\n    " ,
+                id     : "limit_5" ,
+                layout : ""
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+
+
+    
+
+
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+    <h3>showing 20</h3>
+    
+
+    <div class="viz" id="limit_20"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#limit_20").height(200);
+    $("#limit_20").width( );
+    $(function() {
+        options =
+            {
+                cypher : "\n        //call db.schema()\n        MATCH (a)-[to]-(b)\n            return * Limit 20\n    " ,
+                id     : "limit_20" ,
+                layout : ""
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+
+</div>
+
+<div class='row'>
+
+    
+
+
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+    <h3>showing 50 (hierarchical)</h3>
+    
+
+    <div class="viz" id="limit_50"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#limit_50").height(200);
+    $("#limit_50").width( );
+    $(function() {
+        options =
+            {
+                cypher : "\n        MATCH (a)-[to]-(b)\n        return * Limit 50\n    " ,
+                id     : "limit_50" ,
+                layout : "hierarchical"
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+
+
+    
+
+
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+    <h3>showing 100</h3>
+    
+
+    <div class="viz" id="limit_100"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#limit_100").height(200);
+    $("#limit_100").width( );
+    $(function() {
+        options =
+            {
+                cypher : "\n        MATCH (a)-[to]-(b)\n            return * Limit 100\n    " ,
+                id     : "limit_100" ,
+                layout : ""
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
+
+
+</div>
+
+
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+  </body>
+</html>

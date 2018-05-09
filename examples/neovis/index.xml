@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NeoVis examples on GDPR Patterns</title>
+    <link>/examples/neovis/</link>
+    <description>Recent content in NeoVis examples on GDPR Patterns</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	<atom:link href="/examples/neovis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>4-graphs</title>
+      <link>/examples/neovis/4-graphs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/4-graphs/</guid>
+      <description>Here are multiple queries of cypher MATCH (a)-[to]-(b) with different values of Limit
+showing 5   0 nodes 0 edges     neo = null $(&#34;#limit_5&#34;).height(200); $(&#34;#limit_5&#34;).width( ); $(function() { options = { cypher : &#34;\n MATCH (a)-[to]-(b)\n return * Limit 5\n &#34; , id : &#34;limit_5&#34; , layout : &#34;&#34; } neo = new neo4j_Util(); neo.draw(options) .then(function(){ if (neo.viz._network) { neo.viz._network.once(&#39;stabilized&#39;, function () { if (window.afterLoad) { window.</description>
+    </item>
+    
+    <item>
+      <title>Example - Animate</title>
+      <link>/examples/neovis/animate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/animate/</guid>
+      <description>Here is an example of animating nodes movements.
+    .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .card-actions i { color : black ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Example - Canvas Draw</title>
+      <link>/examples/neovis/canvas-draw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/canvas-draw/</guid>
+      <description>Here is an example of drawing directly on the canvas
+Note that sometimes the new nodes will only show after moving the graph
+    .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Example - Cluster</title>
+      <link>/examples/neovis/cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/cluster/</guid>
+      <description>Here is an example of clustering nodes (click to expand)
+ function afterLoad() { neo.cluster_By_Group(&#39;RISK&#39;) //neo.viz._network.clusterOutliers() console.log(neo.viz._network.getNodesInCluster(&#39;cidCluster&#39;)) }  </description>
+    </item>
+    
+    <item>
+      <title>Example - Hierarchical</title>
+      <link>/examples/neovis/hierarchical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/hierarchical/</guid>
+      <description>Here is an example of using the hiearchical layout.</description>
+    </item>
+    
+    <item>
+      <title>Run Cypher queries</title>
+      <link>/examples/neovis/run-cypher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/run-cypher/</guid>
+      <description>write your own cypher queries
+ return 5 return 50 return 150  Query  #textarea_repl_513 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 10  Run Cypher      Cypher Error!    function run_Query_repl_513() { cypher = $(&#39;#textarea_repl_513&#39;).val() neo.</description>
+    </item>
+    
+    <item>
+      <title>Run multiple cypher queries</title>
+      <link>/examples/neovis/run-multiple-cypher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/run-multiple-cypher/</guid>
+      <description>write your own cypher queries
+Query  #textarea_repl_822 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 10  Run Cypher      Cypher Error!    function run_Query_repl_822() { cypher = $(&#39;#textarea_repl_822&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_822() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Table - Cypher Query</title>
+      <link>/examples/neovis/table-from-neo-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/table-from-neo-data/</guid>
+      <description>Query  #textarea_repl_480 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a:RISK)-[to]-(b) RETURN a.key,type(to),b.key LIMIT 250  Run Cypher      Cypher Error!    function run_Query_repl_480() { cypher = $(&#39;#textarea_repl_480&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_480() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>Table - Neo4j Stats</title>
+      <link>/examples/neovis/table-neo4j-stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/table-neo4j-stats/</guid>
+      <description>Query  #textarea_repl_729 { border-radius: .8rem; height: 200px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (n) RETURN DISTINCT labels(n) As Labels, count(*) AS NumofNodes, avg(size(keys(n))) AS AvgNumOfPropPerNode, min(size(keys(n))) AS MinNumPropPerNode, max(size(keys(n))) AS MaxNumPropPerNode, avg(size((n)-[]-())) AS AvgNumOfRelationships, min(size((n)-[]-())) AS MinNumOfRelationships, max(size((n)-[]-())) AS MaxNumOfRelationships  Run Cypher      Cypher Error!    function run_Query_repl_729() { cypher = $(&#39;#textarea_repl_729&#39;).</description>
+    </item>
+    
+  </channel>
+</rss>

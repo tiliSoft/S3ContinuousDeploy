@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>home page on GDPR Patterns</title>
+    <link>/</link>
+    <description>Recent content in home page on GDPR Patterns</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cypher Query</title>
+      <link>/cypher-query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cypher-query/</guid>
+      <description>write your own cypher queries
+examples: first 10 relationships , db schema , return 150
+Query  #textarea_repl_408 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }    Run Cypher      Cypher Error!    function run_Query_repl_408() { cypher = $(&#39;#textarea_repl_408&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_408() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Cypher Table</title>
+      <link>/cypher-table/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cypher-table/</guid>
+      <description>other: labels and keys , distinct labels and types
+Query  #textarea_repl_105 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) RETURN a.key,type(to),b.key LIMIT 250  Run Cypher      Cypher Error!    function run_Query_repl_105() { cypher = $(&#39;#textarea_repl_105&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_105() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Test Soti</title>
+      <link>/examples/tests/cypher-query_soti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/tests/cypher-query_soti/</guid>
+      <description>Testing Schema
+Query  #textarea_repl_897 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 10  Run Cypher      Cypher Error!    function run_Query_repl_897() { cypher = $(&#39;#textarea_repl_897&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_897() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>View Jira Data</title>
+      <link>/jira/view-jira-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-jira-data/</guid>
+      <description>#textarea_repl_243 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 20  Run Cypher      Cypher Error!    function run_Query_repl_243() { cypher = $(&#39;#textarea_repl_243&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_243() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>4-graphs</title>
+      <link>/examples/neovis/4-graphs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/4-graphs/</guid>
+      <description>Here are multiple queries of cypher MATCH (a)-[to]-(b) with different values of Limit
+showing 5   0 nodes 0 edges     neo = null $(&#34;#limit_5&#34;).height(200); $(&#34;#limit_5&#34;).width( ); $(function() { options = { cypher : &#34;\n MATCH (a)-[to]-(b)\n return * Limit 5\n &#34; , id : &#34;limit_5&#34; , layout : &#34;&#34; } neo = new neo4j_Util(); neo.draw(options) .then(function(){ if (neo.viz._network) { neo.viz._network.once(&#39;stabilized&#39;, function () { if (window.afterLoad) { window.</description>
+    </item>
+    
+    <item>
+      <title>Coffee Script REPL</title>
+      <link>/examples/repl/coffee-script-repl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/repl/coffee-script-repl/</guid>
+      <description>here is a simple example
+    .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .card-actions i { color : black ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Coffee Script REPL and Cypher code</title>
+      <link>/examples/repl/repl-and-cypher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/repl/repl-and-cypher/</guid>
+      <description>.card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .card-actions i { color : black ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Control Neo4j</title>
+      <link>/examples/tests/control-neo4j/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/tests/control-neo4j/</guid>
+      <description> Multiple queries for the api (make sure you are on http;//localhost:3000)
+Neo4J queries  match (n) return n match (n:Movie) return n create node create nodes for issue (GDPR-223) create nodes for issue (RISK-1092) create nodes using regex (GDPR-22)  Data setup  delete all nodes create all GDPR create all RISK  Jira data  all ids id:files RISK-1 Fields Schema  </description>
+    </item>
+    
+    <item>
+      <title>DB - Schema</title>
+      <link>/jira/db-schema/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/db-schema/</guid>
+      <description>Here is the current DB Schema</description>
+    </item>
+    
+    <item>
+      <title>Data Journey</title>
+      <link>/jira/data-journeys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/data-journeys/</guid>
+      <description>Here are all the Journeys
+ #textarea_repl_880 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a:Data_Journey {key: &amp;#34;GDPR-206&amp;#34;})-[to*0..3]-(b) return * Limit 150  Run Cypher      Cypher Error!    function run_Query_repl_880() { cypher = $(&#39;#textarea_repl_880&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_880() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Debug Cypher query</title>
+      <link>/examples/tests/debug-query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/tests/debug-query/</guid>
+      <description>This view can be used to see what data is received from Neo4J and how they are transformed into visjs objects
+Query  #textarea_repl_530 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to:relates_to]-(b) return * Limit 2  Run Cypher      Cypher Error!    function run_Query_repl_530() { cypher = $(&#39;#textarea_repl_530&#39;).</description>
+    </item>
+    
+    <item>
+      <title>Example - Animate</title>
+      <link>/examples/neovis/animate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/animate/</guid>
+      <description>Here is an example of animating nodes movements.
+    .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .card-actions i { color : black ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Example - Canvas Draw</title>
+      <link>/examples/neovis/canvas-draw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/canvas-draw/</guid>
+      <description>Here is an example of drawing directly on the canvas
+Note that sometimes the new nodes will only show after moving the graph
+    .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Example - Cluster</title>
+      <link>/examples/neovis/cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/cluster/</guid>
+      <description>Here is an example of clustering nodes (click to expand)
+ function afterLoad() { neo.cluster_By_Group(&#39;RISK&#39;) //neo.viz._network.clusterOutliers() console.log(neo.viz._network.getNodesInCluster(&#39;cidCluster&#39;)) }  </description>
+    </item>
+    
+    <item>
+      <title>Example - Hierarchical</title>
+      <link>/examples/neovis/hierarchical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/hierarchical/</guid>
+      <description>Here is an example of using the hiearchical layout.</description>
+    </item>
+    
+    <item>
+      <title>List of Risks</title>
+      <link>/jira/list-of-risks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/list-of-risks/</guid>
+      <description>Here are all the risk
+ #textarea_repl_93 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 50  Run Cypher      Cypher Error!    function run_Query_repl_93() { cypher = $(&#39;#textarea_repl_93&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_93() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Neo4J visualisation</title>
+      <link>/neo4j/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/neo4j/</guid>
+      <description>This is a Neovis graph on GDPR (with options from defined in an hugo markdown file )</description>
+    </item>
+    
+    <item>
+      <title>Neo4J visualisation of RISK</title>
+      <link>/gdpr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gdpr/</guid>
+      <description>This is a Neovis graph on RISKs (with options from defined in an hugo markdown file )</description>
+    </item>
+    
+    <item>
+      <title>Neo4J visualisation of RISK</title>
+      <link>/risks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/risks/</guid>
+      <description>This is a Neovis graph on RISKs (with options from defined in an hugo markdown file )</description>
+    </item>
+    
+    <item>
+      <title>Risks from Data Journey</title>
+      <link>/jira/views/risks-from-data-journey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/views/risks-from-data-journey/</guid>
+      <description>Here are all the Risks Journeys</description>
+    </item>
+    
+    <item>
+      <title>Run Cypher queries</title>
+      <link>/examples/neovis/run-cypher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/run-cypher/</guid>
+      <description>write your own cypher queries
+ return 5 return 50 return 150  Query  #textarea_repl_513 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 10  Run Cypher      Cypher Error!    function run_Query_repl_513() { cypher = $(&#39;#textarea_repl_513&#39;).val() neo.</description>
+    </item>
+    
+    <item>
+      <title>Run multiple cypher queries</title>
+      <link>/examples/neovis/run-multiple-cypher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/run-multiple-cypher/</guid>
+      <description>write your own cypher queries
+Query  #textarea_repl_822 { border-radius: .8rem; height: 80px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 10  Run Cypher      Cypher Error!    function run_Query_repl_822() { cypher = $(&#39;#textarea_repl_822&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_822() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>Table - Cypher Query</title>
+      <link>/examples/neovis/table-from-neo-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/table-from-neo-data/</guid>
+      <description>Query  #textarea_repl_480 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a:RISK)-[to]-(b) RETURN a.key,type(to),b.key LIMIT 250  Run Cypher      Cypher Error!    function run_Query_repl_480() { cypher = $(&#39;#textarea_repl_480&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_480() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>Table - Neo4j Stats</title>
+      <link>/examples/neovis/table-neo4j-stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/neovis/table-neo4j-stats/</guid>
+      <description>Query  #textarea_repl_729 { border-radius: .8rem; height: 200px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (n) RETURN DISTINCT labels(n) As Labels, count(*) AS NumofNodes, avg(size(keys(n))) AS AvgNumOfPropPerNode, min(size(keys(n))) AS MinNumPropPerNode, max(size(keys(n))) AS MaxNumPropPerNode, avg(size((n)-[]-())) AS AvgNumOfRelationships, min(size((n)-[]-())) AS MinNumOfRelationships, max(size((n)-[]-())) AS MaxNumOfRelationships  Run Cypher      Cypher Error!    function run_Query_repl_729() { cypher = $(&#39;#textarea_repl_729&#39;).</description>
+    </item>
+    
+    <item>
+      <title>View Jira Data (just some fields)</title>
+      <link>/jira/view-jira-data-some-fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-jira-data-some-fields/</guid>
+      <description>#textarea_repl_263 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 20  Run Cypher      Cypher Error!    function run_Query_repl_263() { cypher = $(&#39;#textarea_repl_263&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_263() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>View Nodes</title>
+      <link>/jira/view-nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-nodes/</guid>
+      <description>Query  #textarea_repl_75 { border-radius: .8rem; height: 35px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a)-[to]-(b) return * Limit 50  Run Cypher      Cypher Error!    function run_Query_repl_75() { cypher = $(&#39;#textarea_repl_75&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_75() } function get_Query_from_Url() { $.urlParam = function (name) { var results = new RegExp(&#39;[\?</description>
+    </item>
+    
+    <item>
+      <title>View risks parents</title>
+      <link>/jira/view-risks-parents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/jira/view-risks-parents/</guid>
+      <description>write your own cypher queries
+Query  #textarea_repl_449 { border-radius: .8rem; height: 100px; margin-left: 15px; } #cypher-query button { border-radius: .8rem; margin-right: 15px; margin-left: 15px; } .alert { border-radius: .8rem; margin-right: 15px; margin-left: 15px; }  MATCH (a:RISK {key:&amp;#34;RISK-223&amp;#34;} )-[to:is_parent_of*0..2]-(b) return * Limit 50  Run Cypher      Cypher Error!    function run_Query_repl_449() { cypher = $(&#39;#textarea_repl_449&#39;).val() neo.run_query(cypher) } function afterLoad() { if (&#39;yes&#39;===&#39;yes&#39;) run_Query_repl_449() } function get_Query_from_Url() { $.</description>
+    </item>
+    
+    <item>
+      <title>VisJs - basicUsage</title>
+      <link>/examples/visjs/basic-usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/visjs/basic-usage/</guid>
+      <description>Data and config from VisJs basicUsage example (http://visjs.org/examples/network/basicUsage.html)
+REPL and vizJs     .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>VisJs - coffeescript test</title>
+      <link>/examples/repl/repl-visjs-coffeescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/repl/repl-visjs-coffeescript/</guid>
+      <description>Data and config from VisJs basicUsage example (http://visjs.org/examples/network/basicUsage.html)
+REPL and vizJs     .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>VisJs - disassemblerExample</title>
+      <link>/examples/visjs/disassemblerexample/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/visjs/disassemblerexample/</guid>
+      <description>Data and config from VisJs disassemblerExample example (http://visjs.org/examples/network/exampleApplications/disassemblerExample.js)
+REPL and vizJs     .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>VisJs - nodeLegend</title>
+      <link>/examples/visjs/node-legend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/visjs/node-legend/</guid>
+      <description>Data and config from VisJs nodeLegend example (http://visjs.org/examples/network/exampleApplications/nodeLegend.html)
+REPL and vizJs     .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .</description>
+    </item>
+    
+  </channel>
+</rss>

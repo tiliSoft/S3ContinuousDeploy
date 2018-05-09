@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>REPL examples on GDPR Patterns</title>
+    <link>/examples/repl/</link>
+    <description>Recent content in REPL examples on GDPR Patterns</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    
+	<atom:link href="/examples/repl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coffee Script REPL</title>
+      <link>/examples/repl/coffee-script-repl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/repl/coffee-script-repl/</guid>
+      <description>here is a simple example
+    .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .card-actions i { color : black ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>Coffee Script REPL and Cypher code</title>
+      <link>/examples/repl/repl-and-cypher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/repl/repl-and-cypher/</guid>
+      <description>.card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .card-actions i { color : black ; } #card-code .</description>
+    </item>
+    
+    <item>
+      <title>VisJs - coffeescript test</title>
+      <link>/examples/repl/repl-visjs-coffeescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/examples/repl/repl-visjs-coffeescript/</guid>
+      <description>Data and config from VisJs basicUsage example (http://visjs.org/examples/network/basicUsage.html)
+REPL and vizJs     .card { margin : 0px ; } #card-response { height : 100% ; } #repl { margin : 5px ; } #repl .col-10 { padding-right: 0px ; } #repl .col-2 { padding-left : 5px ; } #card-code .card-header { padding : 0px ; padding-left: 5px; } #card-code .card-actions a { padding : 0px ; } #card-code .</description>
+    </item>
+    
+  </channel>
+</rss>

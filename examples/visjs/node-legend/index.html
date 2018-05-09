@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="VisJs - nodeLegend"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>VisJs - nodeLegend</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+    <div class="app-body">
+
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          
+
+    <h1>VisJs - nodeLegend</h1>
+    <div class="user-edit"><p>Data and config from VisJs nodeLegend example (<a href="http://visjs.org/examples/network/exampleApplications/nodeLegend.html">http://visjs.org/examples/network/exampleApplications/nodeLegend.html</a>)</p>
+
+<h1>REPL and vizJs</h1>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/repl/codemirror.css">
+
+<script src="/js/repl/codemirror.js"></script>
+
+<script src="/js/repl/coffeescript.js"></script>
+
+<script src="/js/repl/browser-compiler-coffeescript.js"></script>
+
+
+<style>
+
+    .card                          {   margin       : 0px   ;                     }
+    #card-response                 {   height       : 100%  ;                     }
+    #repl                          {   margin       : 5px   ;                     }
+    #repl           .col-10        {   padding-right: 0px   ;                     }
+    #repl           .col-2         {   padding-left : 5px   ;                     }
+    #card-code     .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-code     .card-actions a {   padding      : 0px   ;                     }
+    #card-code     .card-actions i {   color        : black ;                     }
+    #card-code     .card-body      {   padding      : 0px   ;                     }
+    #card-response .card-header    {   padding      : 0px   ; padding-left: 5px;  }
+    #card-response .card-body      {   padding      : 0px   ;                     }
+
+    #card-response textarea {
+        position  :absolute;
+        bottom    : 0px;
+        top       : 20px;
+        left      : 0px;
+        right     : 2px;
+        padding   : 5px;
+        font-size : 12px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+    <div class="row" id="repl-visjs">
+        <div class="col-6" class="display:none">
+            
+
+
+
+<div class="card border-primary " id="card-code">
+    <div class="card-header">
+        Code (JavaScript)
+        <div class="card-actions bg-success">
+            <a href="#" class="btn-setting" onclick="exec_Code_repl_234()"><i class="icon-control-play"></i></a>
+        </div>
+    </div>
+    <div class="card-body">
+        <textarea id="code_repl_234">
+var LENGTH_MAIN = 350,
+        LENGTH_SERVER = 150,
+        LENGTH_SUB = 50,
+        WIDTH_SCALE = 2,
+        GRAY = &#39;gray&#39;
+
+var nodes = [];
+var edges = [];
+
+nodes.push({id: 1, label: &#39;192.168.0.1&#39;, group: &#39;switch&#39;, value: 10});
+nodes.push({id: 2, label: &#39;192.168.0.2&#39;, group: &#39;switch&#39;, value: 8});
+nodes.push({id: 3, label: &#39;192.168.0.3&#39;, group: &#39;switch&#39;, value: 6});
+edges.push({from: 1, to: 2, length: LENGTH_MAIN, width: WIDTH_SCALE * 6, label: &#39;0.71 mbps&#39;});
+edges.push({from: 1, to: 3, length: LENGTH_MAIN, width: WIDTH_SCALE * 4, label: &#39;0.55 mbps&#39;});
+
+nodes.push({id: 201, label: &#39;192.168.0.201&#39;, group: &#39;desktop&#39;, value: 1});
+edges.push({from: 2, to: 201, length: LENGTH_SUB, color: GRAY, width: WIDTH_SCALE});
+
+// group around 3
+nodes.push({id: 202, label: &#39;192.168.0.202&#39;, group: &#39;desktop&#39;, value: 4});
+edges.push({from: 3, to: 202, length: LENGTH_SUB, color: GRAY, width: WIDTH_SCALE * 2});
+for (var i = 230; i &lt;= 231; i&#43;&#43; ) {
+    nodes.push({id: i, label: &#39;192.168.0.&#39; &#43; i, group: &#39;mobile&#39;, value: 2});
+    edges.push({from: 3, to: i, length: LENGTH_SUB, color: GRAY, fontColor: GRAY, width: WIDTH_SCALE});
+  }
+
+      var x = - container.clientWidth / 2 &#43; 50;
+      var y = - container.clientHeight / 2 &#43; 50;
+
+      var step = 70;
+      nodes.push({id: 1001, x: x, y: y &#43; step     , label: &#39;Switch&#39;, group: &#39;switch&#39;, value: 1, fixed: true,  physics:false});
+      nodes.push({id: 1003, x: x, y: y &#43; 2 * step , label: &#39;Computer&#39;, group: &#39;desktop&#39;, value: 1, fixed: true,  physics:false});
+      nodes.push({id: 1004, x: x, y: y &#43; 3 * step , label: &#39;Smartphone&#39;, group: &#39;mobile&#39;, value: 1, fixed: true,  physics:false});
+
+var options = {
+        nodes: {
+          scaling: { min: 16, max: 32 }
+        },
+        physics:{
+          barnesHut:{gravitationalConstant:-5000},
+        },
+        groups: {
+          &#39;switch&#39;: { shape: &#39;triangle&#39; , color: &#39;#FF9900&#39; },
+          desktop : { shape: &#39;dot&#39;      , color: &#34;#2B7CE9&#34; },
+          mobile  : { shape: &#39;square&#39;   , color: &#34;#5A1E5C&#34; }
+        }
+      };
+var data = {
+nodes: nodes,
+edges: edges
+};
+
+
+
+network = new vis.Network(container, data, options);
+
+ </textarea>
+    </div>
+</div>
+        </div>
+        <div class="col-6">
+            <script src="/js/visjs/vis.js" > </script>
+
+
+
+
+
+<style>
+    #repl_640 {
+        height : 400px;
+    }
+
+    #card-graph .card-header {   padding:0px;  padding-left:5px   }
+    #card-graph .card-body   {   padding:0px;                     }
+
+</style>
+
+<div class="card border-primary " id="card-graph">
+    <div class="card-header">
+        Graph
+    </div>
+    <div class="card-body">
+        <div id="repl_640"></div>
+    </div>
+</div>
+
+
+
+<script>
+    var container = document.getElementById('repl_640');
+    var data = {
+        nodes: new vis.DataSet({}),
+        edges: new vis.DataSet({})
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+
+    function graph(nodes, edges, options)
+    {
+        var data = {
+            nodes: new vis.DataSet(nodes),
+            edges: new vis.DataSet(edges)
+        };
+        options = options ? options : {}
+        network.setData(data, options)
+    }
+</script>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+<script>
+    var options = {
+        lineNumbers: true,
+        mode: "coffeescript",
+        extraKeys: {
+            'Cmd-Enter': (cm) => {
+                exec_Code_repl_234()
+            },
+        },
+    }
+    var target = document.getElementById("code_repl_234")
+    var myCodeMirror_repl_234 = CodeMirror.fromTextArea(target, options);
+    myCodeMirror_repl_234.setSize("100%", 400)
+
+    function exec_Code_repl_234(){
+        value = myCodeMirror_repl_234.getValue()
+        if ('JavaScript' ==='JavaScript')
+            try {
+                result = new Function(value)()
+                if(typeof(result) == "object")
+                    result = JSON.stringify(result)
+            } catch( err)
+            {
+                result = err
+            }
+        else
+            result = CoffeeScript.run(value)        
+
+        $("#result_repl_640").val(result)
+    }
+
+    window.addEventListener("load",function(event) {
+        if ((typeof neo)=== "undefined")
+        {
+            exec_Code_repl_234()
+        }
+        else
+        {
+            window.afterLoad = function() {
+                exec_Code_repl_234()
+            }
+        }
+    })
+
+</script>
+</div>
+
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+  </body>
+</html>

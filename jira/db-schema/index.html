@@ -1,24 +1,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-	<meta name="generator" content="Hugo 0.40.2" />
     <meta charset   ="utf-8"                                                                               >
     <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
     <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
-    <meta name      ="description"                content="home page"                                   >
+    <meta name      ="description"                content="DB - Schema"                                   >
     <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
 
-    <title>home page</title>
+    <title>DB - Schema</title>
 
     <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
     <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
     <link href      ="/css/style.css"             rel    ="stylesheet">           
 	<link href      ="/css/custom.css"            rel    ="stylesheet">           
 </head>
-
   <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
     <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -28,9 +32,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 </header>
-
     <div class="app-body">
-
       <div class="sidebar">
     <nav class="sidebar-nav">
             <ul class="nav">
@@ -87,17 +89,118 @@
 
 
 
-
       <main class="main">
         <div class="container-fluid">
 
+          <head>
+    <style type="text/css">
+
+        .viz {
+            width: 100%;
+            height: 550px;
+            border: 1px solid lightgray;
+            font: 12pt arial;
+            background: white;
+        }
+    </style>
+</head>
           
 
-  <h1>home page</h1>
-  <p>This is the home page.</p>
 
-<p>The repo with this apps code is <a href="https://github.com/OWASP/gdpr-patterns/">https://github.com/OWASP/gdpr-patterns/</a></p>
 
+
+
+<script src="/js/neo4j/neovis.js"></script>
+
+<script>
+
+    var params_Data = {
+        cypher        : "call db.schema()",
+        labels        : {
+}
+,
+        relationships : {
+}
+,
+        options       : {
+                            gravitationalConstant: -50000
+                        },
+        hide_Graph    : "false"
+    }
+
+
+
+
+    let server_url      = "bolt:\/\/localhost:7687",
+        server_user     = "",
+        server_password = "test",
+        container_id    = "viz";
+
+
+
+</script>
+
+<script src="/js/neo4j/neo4j-util.js"></script>
+          
+    
+    
+    
+    
+    
+
+    <h2> DB - Schema</h2>
+    <p>Here is the current DB Schema</p>
+
+    
+
+
+
+
+
+
+<div class="col" id="cypher-div">
+    
+
+    <div class="viz" id="viz"></div>
+    <small>
+        <span class="badge badge-pill badge-dark"  id="node_count">0</span> nodes
+        <span class="badge badge-pill badge-dark"  id="edge_count">0</span> edges
+        <i id="loading-spinner" class='fa fa-spinner fa-spin fa-fw'></i>
+    </small>
+</div>
+
+<script>
+    neo = null
+    $("#viz").height(550);
+    $("#viz").width( );
+    $(function() {
+        options =
+            {
+                cypher : "call db.schema()" ,
+                id     : "viz" ,
+                layout : ""
+            }
+        neo = new neo4j_Util();
+        neo.draw(options)
+            .then(function(){
+                if (neo.viz._network) {
+                    neo.viz._network.once('stabilized', function () {
+                        if (window.afterLoad) {
+                            window.afterLoad()
+                        }
+                    })
+                }
+                else
+                {
+                    if (window.afterLoad) {
+                        window.afterLoad()
+                    }
+                }
+            });
+
+
+    })
+</script>
 
 
 
@@ -109,12 +212,5 @@
     <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
     <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
 </footer>
-    <script src="/js/jquery.min.js"     ></script>          
-<script src="/js/popper.min.js"     ></script>
-<script src="/js/bootstrap.min.js"  ></script>
-<script src="/js/pace.min.js"       ></script>
-<script src="/js/app.js"            ></script>          
-
-
   </body>
 </html>
