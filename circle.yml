@@ -5,4 +5,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - aws s3 sync / s3://gdpr-test1/ --delete
+      - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://gdpr-test1 --delete
